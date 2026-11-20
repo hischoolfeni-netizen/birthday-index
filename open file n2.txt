@@ -1,0 +1,112 @@
+Keep smiling, keep shining, and never forget
+how precious you are!
+Sending you the biggest virtual hug! 🫂
+With lots of love,
+Someone 💗
+  </div>
+</section>
+<section>
+  <h2>📸 Our little memory corner</h2>
+  <p>Some moments are too precious to forget.</p>
+  <div class="grid">
+    <div class="memory">
+      <span>📷</span>
+      Our memories
+    </div>
+    <div class="memory">
+      <span>🌸</span>
+      Beautiful moments
+    </div>
+    <div class="memory">
+      <span>🧸</span>
+      Silly memories
+    </div>
+    <div class="memory">
+      <span>💗</span>
+      Forever special
+    </div>
+  </div>
+  <p style="font-size:13px">You can replace these with your own photos!</p>
+</section>
+<section>
+  <h2>💗 5 reasons you're special</h2>
+  <div class="card">
+    <ul class="reasons">
+      <li>🌷 Your beautiful heart.</li>
+      <li>🥹 Your lovely smile.</li>
+      <li>✨ Your unique personality.</li>
+      <li>🫶 The happiness you bring to others.</li>
+      <li>💗 Simply because you're Nonduu!</li>
+    </ul>
+  </div>
+</section>
+<section>
+  <h2>🎂 Make a birthday wish!</h2>
+  <div class="cake">🎂</div>
+  <p>Close your eyes and make a wish...</p>
+  <button onclick="blowCandles()">Blow the candles! 🕯️</button>
+  <div id="cakeSurprise" class="card hidden">
+    <h1>🎉 Huuuu 🎉</h1>
+    <p>May every little wish in your heart come true!</p>
+    <p>You deserve a lifetime of happiness! 💗</p>
+  </div>
+</section>
+<section>
+  <h2>🎁 One last surprise...</h2>
+  <p>Are you ready for a little secret?</p>
+  <button onclick="revealSecret()">Open your secret message 💌</button>
+  <div id="secret" class="card hidden">
+    <h2>Hey Nonduu! 🥹</h2>
+    <p>
+      No matter how far away we are,
+      I hope you always know that you matter.
+      The world is a little brighter because
+      you are in it.
+      Never stop being the wonderful person you are.
+      HAPPY BIRTHDAY ONCE AGAIN!! 💗🌸
+    </p>
+    <h2>Lots of love, Someone ♡</h2>
+  </div>
+</section>
+<footer>
+  Made with 💗, just for Nonduu.
+  <br>Some gifts are made of love, not money. 🌷
+</footer>
+</div>
+<script>
+function openGift() {
+  document.getElementById('opening').style.display = 'none';
+  document.getElementById('main').style.display = 'block';
+  for(let i=0;i<35;i++) {
+    setTimeout(createHeart,i*80);
+  }
+  window.scrollTo(0,0);
+}
+function blowCandles() {
+  document.getElementById('cakeSurprise').style.display = 'block';
+  for(let i=0;i<35;i++) {
+    setTimeout(createHeart,i*100);
+  }
+}
+function revealSecret() {
+  document.getElementById('secret').style.display = 'block';
+  document.getElementById('secret').scrollIntoView({
+    behavior:'smooth',
+    block:'center'
+  });
+}
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.textContent = ['💗','💕','🌸','✨','🦋'][
+    Math.floor(Math.random()*5)
+  ];
+  heart.style.left = Math.random()*100+'vw';
+  heart.style.fontSize = (15+Math.random()*25)+'px';
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),7000);
+}
+setInterval(createHeart,1800);
+</script>
+</body>
+</html>
